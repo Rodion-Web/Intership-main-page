@@ -1,6 +1,6 @@
 // Main slide
 // $(document).ready(function() {
-$('.sl').slick({
+jQuery('.sl').slick({
   dots: true,
   fade: true,
   arrows: false,
@@ -13,7 +13,7 @@ $('.sl').slick({
 });
 // }); 
 // Slide3
-$('.sl3').slick({
+jQuery('.sl3').slick({
   cssEasy: 'easy-in',
   slidesToScroll: 1,
   centerMode: true,
@@ -32,15 +32,15 @@ $('.sl3').slick({
   }]
 });
 // Slide2
-$('.slider-pro').slick({
+jQuery('.slider-pro').slick({
   centerMode: true,
   centerPadding: '20px',
   slidesToShow: 3,
   variableWidth: true,
   arrows: false,
   arrows: true,
-  prevArrow: $('.prev'),
-  nextArrow: $('.next'),
+  prevArrow: jQuery('.prev'),
+  nextArrow: jQuery('.next'),
   responsive: [{
     breakpoint: 376,
     settings: {
@@ -65,12 +65,12 @@ DropDown.prototype = {
 
     obj.wrapper.on('click', function (event) {
       console.log(this)
-      $(this).toggleClass('active');
+      jQuery(this).toggleClass('active');
       return false;
     });
 
     obj.opts.on('click', function (ev) {
-      let opt = $(this);
+      let opt = jQuery(this);
       obj.val = opt.text();
       obj.index = opt.index();
       if (obj.valueElement) {
@@ -89,7 +89,7 @@ DropDown.prototype = {
     return this.index;
   }
 };
-$(function () {
+jQuery(function () {
   const array = [
     ['Украина', '+380'],
     ['Австралия', '+61'],
@@ -280,12 +280,12 @@ $(function () {
     ['Ямайка', '+1876'],
     ['Япония', '+81']
   ]
-  const dropdown = $('<ul class="dropdown">');
+  const dropdown = jQuery('<ul class="dropdown">');
   array.forEach(el => {
-    const li = $(`<li>`)
-    const div = $("<div class='phoneMenuItem'>")
-    const num = $("<div class='number-phone'>")
-    const country = $("<div class='country-phone'>")
+    const li = jQuery(`<li>`)
+    const div = jQuery("<div class='phoneMenuItem'>")
+    const num = jQuery("<div class='number-phone'>")
+    const country = jQuery("<div class='country-phone'>")
     country.text(el[0]);
     num.text(el[1])
     div.append(num);
@@ -293,12 +293,12 @@ $(function () {
     li.append(div);
     dropdown.append(li);
   })
-  $('.name-phone > .wrapper').append(dropdown);
+  jQuery('.name-phone > .wrapper').append(dropdown);
   let wrapper = new DropDown($('.name-phone > .wrapper'));
-  wrapper.placeholder = $(".phone-number");
+  wrapper.placeholder = jQuery(".phone-number");
   wrapper.valueElement = true;
-  $(document).click(function () {
-    $('.name-phone > .wrapper').removeClass('active');
+  jQuery(document).click(function () {
+    jQuery('.name-phone > .wrapper').removeClass('active');
   });
 });
 let phone = document.getElementById('border-input');
